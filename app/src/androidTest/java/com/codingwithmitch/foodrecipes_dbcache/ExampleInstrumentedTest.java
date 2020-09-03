@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache;
+package com.chrislicoder.foodrecipes_dbcache;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.codingwithmitch.foodrecipes", appContext.getPackageName());
+        assertEquals("com.chrislicoder.foodrecipes", appContext.getPackageName());
     }
 }

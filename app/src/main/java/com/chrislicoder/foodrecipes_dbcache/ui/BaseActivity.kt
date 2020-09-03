@@ -1,17 +1,17 @@
-package com.codingwithmitch.foodrecipes_dbcache.ui
+package com.chrislicoder.foodrecipes_dbcache.ui
 
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.codingwithmitch.foodrecipes_dbcache.R
+import com.chrislicoder.foodrecipes_dbcache.R
 
 abstract class BaseActivity : AppCompatActivity() {
     var mProgressBar: ProgressBar? = null
     override fun setContentView(layoutResID: Int) {
         val constraintLayout: ConstraintLayout =
-                layoutInflater.inflate(R.layout.activity_base, null) as ConstraintLayout
+            layoutInflater.inflate(R.layout.activity_base, null) as ConstraintLayout
         val frameLayout: FrameLayout = constraintLayout.findViewById(R.id.activity_content)
         mProgressBar = constraintLayout.findViewById(R.id.progress_bar)
         layoutInflater.inflate(layoutResID, frameLayout, true)

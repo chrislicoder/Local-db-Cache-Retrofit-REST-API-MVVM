@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache.models
+package com.chrislicoder.foodrecipes_dbcache.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.Expose

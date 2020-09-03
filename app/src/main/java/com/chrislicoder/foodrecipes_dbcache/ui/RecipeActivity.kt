@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache.ui
+package com.chrislicoder.foodrecipes_dbcache.ui
 
 import android.os.Bundle
 import android.view.View
@@ -7,9 +7,9 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.lifecycle.ViewModelProvider
-import com.codingwithmitch.foodrecipes_dbcache.R
-import com.codingwithmitch.foodrecipes_dbcache.models.Recipe
-import com.codingwithmitch.foodrecipes_dbcache.viewmodels.RecipeViewModel
+import com.chrislicoder.foodrecipes_dbcache.R
+import com.chrislicoder.foodrecipes_dbcache.models.Recipe
+import com.chrislicoder.foodrecipes_dbcache.viewmodels.RecipeViewModel
 
 class RecipeActivity : BaseActivity() {
     // UI components
@@ -35,7 +35,7 @@ class RecipeActivity : BaseActivity() {
     private fun getIncomingIntent() {
         if (intent.hasExtra(RECIPE_INTENT)) {
             val recipe = intent.getParcelableExtra<Recipe>(
-                    RECIPE_INTENT
+                RECIPE_INTENT
             )
         }
     }

@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache.viewmodels
+package com.chrislicoder.foodrecipes_dbcache.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

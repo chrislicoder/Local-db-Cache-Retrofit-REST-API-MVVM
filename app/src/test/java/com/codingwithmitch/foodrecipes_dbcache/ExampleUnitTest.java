@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache;
+package com.chrislicoder.foodrecipes_dbcache;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache.adapters
+package com.chrislicoder.foodrecipes_dbcache.adapters
 
 import android.net.Uri
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.codingwithmitch.foodrecipes_dbcache.R
-import com.codingwithmitch.foodrecipes_dbcache.models.Recipe
-import com.codingwithmitch.foodrecipes_dbcache.util.Constants.DEFAULT_SEARCH_CATEGORIES
-import com.codingwithmitch.foodrecipes_dbcache.util.Constants.DEFAULT_SEARCH_CATEGORY_IMAGES
+import com.chrislicoder.foodrecipes_dbcache.R
+import com.chrislicoder.foodrecipes_dbcache.models.Recipe
+import com.chrislicoder.foodrecipes_dbcache.util.Constants.DEFAULT_SEARCH_CATEGORIES
+import com.chrislicoder.foodrecipes_dbcache.util.Constants.DEFAULT_SEARCH_CATEGORY_IMAGES
 import java.util.*
 
 class RecipeRecyclerAdapter(private val mOnRecipeListener: OnRecipeListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -58,7 +58,7 @@ class RecipeRecyclerAdapter(private val mOnRecipeListener: OnRecipeListener) : R
                 }
             }
             CATEGORY_TYPE -> {
-                val path = Uri.parse("android.resource://com.codingwithmitch.foodrecipes/drawable/${mRecipes[i].image_url}")
+                val path = Uri.parse("android.resource://com.chrislicoder.foodrecipes/drawable/${mRecipes[i].image_url}")
                 with((viewHolder as CategoryViewHolder)) {
                     Glide.with(viewHolder.itemView.context)
                         .setDefaultRequestOptions(requestOptions)
@@ -134,9 +134,9 @@ class RecipeRecyclerAdapter(private val mOnRecipeListener: OnRecipeListener) : R
         val categories = mutableListOf<Recipe>()
         for ((index, cateboryString) in DEFAULT_SEARCH_CATEGORIES.withIndex()) {
             val mockRecipe = Recipe(
-                    title = cateboryString,
-                    image_url = DEFAULT_SEARCH_CATEGORY_IMAGES[index],
-                    social_rank = -1F
+                title = cateboryString,
+                image_url = DEFAULT_SEARCH_CATEGORY_IMAGES[index],
+                social_rank = -1F
             )
             categories.add(mockRecipe)
         }
