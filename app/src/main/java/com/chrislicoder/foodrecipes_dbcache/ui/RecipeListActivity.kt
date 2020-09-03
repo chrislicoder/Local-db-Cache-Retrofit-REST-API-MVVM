@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache.ui
+package com.chrislicoder.foodrecipes_dbcache.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,11 +8,11 @@ import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.codingwithmitch.foodrecipes_dbcache.R
-import com.codingwithmitch.foodrecipes_dbcache.adapters.OnRecipeListener
-import com.codingwithmitch.foodrecipes_dbcache.adapters.RecipeRecyclerAdapter
-import com.codingwithmitch.foodrecipes_dbcache.util.ui.VerticalSpacingDecorator
-import com.codingwithmitch.foodrecipes_dbcache.viewmodels.RecipeListViewModel
+import com.chrislicoder.foodrecipes_dbcache.R
+import com.chrislicoder.foodrecipes_dbcache.adapters.OnRecipeListener
+import com.chrislicoder.foodrecipes_dbcache.adapters.RecipeRecyclerAdapter
+import com.chrislicoder.foodrecipes_dbcache.util.ui.VerticalSpacingDecorator
+import com.chrislicoder.foodrecipes_dbcache.viewmodels.RecipeListViewModel
 
 class RecipeListActivity : BaseActivity(), OnRecipeListener {
     private lateinit var mSearchView: SearchView
@@ -29,6 +29,7 @@ class RecipeListActivity : BaseActivity(), OnRecipeListener {
         initRecyclerView()
         initSearchView()
         setSupportActionBar(findViewById<View>(R.id.toolbar) as Toolbar)
+        subscribeObservers()
     }
 
     private fun initRecyclerView() {
@@ -51,6 +52,23 @@ class RecipeListActivity : BaseActivity(), OnRecipeListener {
         })
     }
 
+    private fun subscribeObservers() {
+        mRecipeListViewModel.viewState.observe(
+            this,
+            { viewState ->
+                viewState?.let {
+                    when (viewState) {
+                        RecipeListViewModel.ViewState.RECIPES -> {
+                        }
+                        RecipeListViewModel.ViewState.CATEGORIES -> {
+                            displaySearchCategories()
+                        }
+                    }
+                }
+            }
+        )
+    }
+
     override fun onRecipeClick(position: Int) {
         val intent = Intent(this, RecipeActivity::class.java)
         intent.putExtra("recipe", mAdapter.getSelectedRecipe(position))
@@ -58,6 +76,10 @@ class RecipeListActivity : BaseActivity(), OnRecipeListener {
     }
 
     override fun onCategoryClick(category: String?) {}
+
+    private fun displaySearchCategories() {
+        mAdapter.displaySearchCategories()
+    }
 
     companion object {
         private const val TAG = "RecipeListActivity"

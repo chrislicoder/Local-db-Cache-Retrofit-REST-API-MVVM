@@ -1,6 +1,6 @@
-package com.codingwithmitch.foodrecipes_dbcache.requests.responses
+package com.chrislicoder.foodrecipes_dbcache.requests.responses
 
-import com.codingwithmitch.foodrecipes_dbcache.models.Recipe
+import com.chrislicoder.foodrecipes_dbcache.models.Recipe
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

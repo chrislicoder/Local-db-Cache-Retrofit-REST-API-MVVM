@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache.util.ui
+package com.chrislicoder.foodrecipes_dbcache.util.ui
 
 import android.content.Context
 import android.graphics.Canvas
@@ -9,7 +9,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.LinearInterpolator
 import android.view.animation.Transformation
-import com.codingwithmitch.foodrecipes_dbcache.R
+import com.chrislicoder.foodrecipes_dbcache.R
 
 class HorizontalDottedProgress : View {
     // actual dot radius
@@ -26,14 +26,14 @@ class HorizontalDottedProgress : View {
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(
-            context,
-            attrs
+        context,
+        attrs
     )
 
     constructor(
-            context: Context?,
-            attrs: AttributeSet?,
-            defStyleAttr: Int
+        context: Context?,
+        attrs: AttributeSet?,
+        defStyleAttr: Int
     ) : super(context, attrs, defStyleAttr)
 
     // Method to draw your customized dot on the canvas
@@ -53,25 +53,25 @@ class HorizontalDottedProgress : View {
     }
 
     private fun createDot(
-            canvas: Canvas,
-            paint: Paint
+        canvas: Canvas,
+        paint: Paint
     ) {
 
         // here i have setted progress bar with 10 dots , so repeat and wnen i = mDotPosition  then increase the radius of dot i.e mBounceDotRadius
         for (i in 0 until mDotAmount) {
             if (i == mDotPosition) {
                 canvas.drawCircle(
-                        10 + (i * 20).toFloat(),
-                        mBounceDotRadius.toFloat(),
-                        mBounceDotRadius.toFloat(),
-                        paint
+                    10 + (i * 20).toFloat(),
+                    mBounceDotRadius.toFloat(),
+                    mBounceDotRadius.toFloat(),
+                    paint
                 )
             } else {
                 canvas.drawCircle(
-                        10 + (i * 20).toFloat(),
-                        mBounceDotRadius.toFloat(),
-                        mDotRadius.toFloat(),
-                        paint
+                    10 + (i * 20).toFloat(),
+                    mBounceDotRadius.toFloat(),
+                    mDotRadius.toFloat(),
+                    paint
                 )
             }
         }
@@ -114,8 +114,8 @@ class HorizontalDottedProgress : View {
 
     private inner class BounceAnimation : Animation() {
         override fun applyTransformation(
-                interpolatedTime: Float,
-                t: Transformation
+            interpolatedTime: Float,
+            t: Transformation
         ) {
             super.applyTransformation(interpolatedTime, t)
             // call invalidate to redraw your view againg.

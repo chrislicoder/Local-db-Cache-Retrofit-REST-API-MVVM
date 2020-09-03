@@ -1,9 +1,9 @@
-package com.codingwithmitch.foodrecipes_dbcache.adapters
+package com.chrislicoder.foodrecipes_dbcache.adapters
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.codingwithmitch.foodrecipes_dbcache.R
+import com.chrislicoder.foodrecipes_dbcache.R
 import de.hdodenhof.circleimageview.CircleImageView
 
 class CategoryViewHolder(itemView: View, var listener: OnRecipeListener) : RecyclerView.ViewHolder(itemView), View.OnClickListener {

@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache.util
+package com.chrislicoder.foodrecipes_dbcache.util
 
 object Constants {
     const val BASE_URL = "https://recipesapi.herokuapp.com"
@@ -6,24 +6,24 @@ object Constants {
     const val NETWORK_TIMEOUT = 3000
 
     val DEFAULT_SEARCH_CATEGORIES = arrayOf(
-            "Barbeque",
-            "Breakfast",
-            "Chicken",
-            "Beef",
-            "Brunch",
-            "Dinner",
-            "Wine",
-            "Italian"
+        "Barbeque",
+        "Breakfast",
+        "Chicken",
+        "Beef",
+        "Brunch",
+        "Dinner",
+        "Wine",
+        "Italian"
     )
 
     val DEFAULT_SEARCH_CATEGORY_IMAGES = arrayOf(
-            "barbeque",
-            "breakfast",
-            "chicken",
-            "beef",
-            "brunch",
-            "dinner",
-            "wine",
-            "italian"
+        "barbeque",
+        "breakfast",
+        "chicken",
+        "beef",
+        "brunch",
+        "dinner",
+        "wine",
+        "italian"
     )
 }

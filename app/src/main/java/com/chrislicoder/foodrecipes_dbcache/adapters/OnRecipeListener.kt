@@ -1,4 +1,4 @@
-package com.codingwithmitch.foodrecipes_dbcache.adapters
+package com.chrislicoder.foodrecipes_dbcache.adapters
 
 interface OnRecipeListener {
     fun onRecipeClick(position: Int)
