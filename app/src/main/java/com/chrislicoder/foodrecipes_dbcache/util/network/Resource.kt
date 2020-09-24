@@ -1,8 +1,10 @@
 package com.chrislicoder.foodrecipes_dbcache.util.network
 
 class Resource<T> private constructor(val status: Status, val data: T, val message: String?) {
-    enum class Status {
-        SUCCESS, ERROR, LOADING
+    sealed class Status {
+        object SUCCESS : Status()
+        object ERROR : Status()
+        object LOADING : Status()
     }
 
     companion object {
