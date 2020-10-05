@@ -9,7 +9,7 @@ import java.util.concurrent.ScheduledExecutorService
 
 class AppExecutors private constructor() {
     private val mNetworkIO =
-            Executors.newScheduledThreadPool(3)
+        Executors.newScheduledThreadPool(3)
 
     fun networkIO(): ScheduledExecutorService {
         return mNetworkIO
@@ -19,12 +19,11 @@ class AppExecutors private constructor() {
 
     private val mMainThreadExecutor: Executor = MainThreadExecutor()
 
-
-    fun diskIO(): Executor? {
+    fun diskIO(): Executor {
         return mDiskIO
     }
 
-    fun mainThread(): Executor? {
+    fun mainThread(): Executor {
         return mMainThreadExecutor
     }
 
