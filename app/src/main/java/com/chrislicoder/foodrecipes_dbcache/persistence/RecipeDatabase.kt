@@ -17,9 +17,9 @@ abstract class RecipeDatabase : RoomDatabase() {
         fun getInstance(context: Context): RecipeDatabase =
             if (this::instance.isInitialized) instance else {
                 instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        RecipeDatabase::class.java,
-                        DATABASE_NAME
+                    context.applicationContext,
+                    RecipeDatabase::class.java,
+                    DATABASE_NAME
                 ).build()
                 instance
             }
